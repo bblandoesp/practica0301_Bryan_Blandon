@@ -1,5 +1,13 @@
 n = int(input("Numero entero:"))
 def fibonacci(n):
+    """función que reciba un número entero positivo n y calcule 
+    el número de fibonacci asociado a ese número bucles.
+
+    Parámetros:
+        -Fichero: Un fichero con formato CSV
+
+    Salida:
+        El número de fibonacci asociado a un número solicitado. """
     a = 0
     b = 1
     if n == 0:
