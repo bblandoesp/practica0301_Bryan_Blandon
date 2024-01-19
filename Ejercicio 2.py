@@ -1,4 +1,5 @@
 import csv
+import os
 F1 = "50.csv"
 F2 = "1000.csv"
 
@@ -9,10 +10,13 @@ def leerfichero(fichero):
                 con el formato CVS.
         Salida:
                 -Lista con el contenido del fichero."""
-        with open(fichero, "r") as file:
-                Doc = csv.reader(file)
-                lista = list(Doc)
-        return lista
+        if os.path.isfile(fichero):
+                with open(fichero, "r") as file:
+                        Doc = csv.reader(file)
+                        lista = list(Doc)
+                return lista
+        else:
+               return("El fichero no Existe")
         
 def formato_capitalizado (lista):
         """Funcion que le aplica el sistema capitalizado a un nombre.
@@ -41,6 +45,6 @@ def CalcularDNI(lista):
             return(digito)
        
        
-fichero = leerfichero(F1)
+fichero = leerfichero("55.csv")
 print(formato_capitalizado(fichero))
 print(CalcularDNI(fichero))
